@@ -1,0 +1,41 @@
+#include <stdio.h>
+int main() {
+    int a[10][10],i,j,n,m;
+    printf("enter the rows and columns");
+    scanf("%d %d",&n,&m);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            if(a[i][j]>=10)
+            {
+                a[i][j]=sumofd(a[i][j]);
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            printf("%d\n",a[i][j]);
+        }
+    }
+}
+    int sumofd(int num)
+    {
+        int rem,sum=0;
+        while(num!=0)
+        {
+            rem=num%10;
+            sum=sum+rem;
+            num=num/10;
+        }
+    return sum;
+        }
